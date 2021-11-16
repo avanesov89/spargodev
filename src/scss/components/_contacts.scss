@@ -1,0 +1,43 @@
+.contacts {
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__list {
+        max-width: 715px;
+    }
+
+    &__map {
+        max-width: 575px;
+    }
+
+    &__form {
+        background-color: var(--color-gray-100);
+        padding: 50px 0;
+        margin-top: 55px;
+        margin-bottom: -130px;
+
+        @include before('xxl') {
+            margin-bottom: -80px;
+        }
+
+        @include before('md') {
+            padding: 30px 0 50px;
+            margin-top: 30px;
+        }
+
+        &-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--corporate-v-1);
+            line-height: 24px;
+            margin-bottom: 35px;
+
+            @include before('md') {
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+    }
+}
