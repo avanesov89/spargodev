@@ -1,0 +1,70 @@
+.vacancies {
+
+  &__block {
+
+    padding-top: 35px;
+
+    @include before('lg') {
+      padding-top: 25px;
+    }
+
+    &-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--corporate-v-1);
+
+      @include before('lg') {
+        font-size: 22px;
+      }
+
+      @include before('md') {
+        font-size: 20px;
+      }
+    }
+
+    &-list {
+      margin-top: 20px;
+      padding-left: 15px;
+      display: flex;
+      flex-direction: column;
+
+      @include before('lg') {
+        padding-left: 5px;
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      @include before('lg') {
+        align-items: flex-start;
+      }
+    }
+
+    &-department {
+      color: var(--corporate-v-2);
+      text-decoration-style: dashed;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 26px;
+
+      @include before('md') {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    &-counter {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--corporate-v-0);
+      margin-left: 5px;
+    }
+  }
+}

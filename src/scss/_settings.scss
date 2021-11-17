@@ -15,6 +15,7 @@ html {
 body {
   margin: 0;
   font-family: "Nunito", sans-serif;
+  font-size: 16px;
   font-weight: 400;
   color: var(--color-gray-900);
 }
@@ -85,12 +86,13 @@ svg {
 }
 
 .transition {
-    transition: all 0.2s;
+  transition: all 0.2s;
 
-    &:hover, &:focus {
-      transition: all 0.2s;
-    }
+  &:hover,
+  &:focus {
+    transition: all 0.2s;
   }
+}
 
 .text__block {
   ul {
@@ -99,26 +101,26 @@ svg {
     list-style: none;
 
     li {
-        padding-left: 15px;
-        position: relative;
-        font-size: 16px;
-        line-height: 22px;
+      padding-left: 15px;
+      position: relative;
+      font-size: 16px;
+      line-height: 22px;
 
-        &::before {
-            content: '';
-            width: 5px;
-            height: 5px;
-            position: absolute;
-            left: 0;
-            display: inline-block;
-            background-color: var(--corporate-v-2);
-            border-radius: 50%;
-            top: 9px;
-        }
+      &::before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        background-color: var(--corporate-v-2);
+        border-radius: 50%;
+        top: 9px;
+      }
 
-        &:not(:last-child) {
-            margin-bottom: 5px;
-        }
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
     }
   }
 }
@@ -168,7 +170,10 @@ svg {
   transition: all 0.2s;
   white-space: nowrap;
 
-  &:hover, &:focus, &:active, &.active {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
     background-color: var(--color-gray-100);
     color: var(--corporate-v-2);
     transition: all 0.2s;
@@ -237,7 +242,8 @@ svg {
   &-link {
     color: var(--corporate-v-2);
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       text-decoration: underline;
       color: var(--corporate-v-3);
     }
@@ -290,8 +296,9 @@ svg {
     background-color: #fff;
     border: 1px solid #fff;
     border-radius: 4px;
-    padding: 15px;
+    padding: 0 15px;
     height: 48px;
+    line-height: 48px;
     color: var(--color-gray-600);
     box-shadow: 0px 2px 6px rgba(52, 73, 94, 0.15);
     text-overflow: ellipsis;
@@ -322,6 +329,7 @@ svg {
     border-radius: 4px;
     padding: 15px;
     height: auto;
+    line-height: 20px;
     min-height: 190px;
     max-height: 190px;
     min-width: 100%;
@@ -346,6 +354,27 @@ svg {
       &::placeholder {
         opacity: 0.3;
       }
+    }
+  }
+}
+
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__item {
+    background-color: var(--color-gray-400);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--corporate-v-1);
+    margin: 0 5px 5px 0;
+
+    &:hover {
+      color: var(--color-gray-100);
     }
   }
 }
