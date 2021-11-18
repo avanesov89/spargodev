@@ -378,3 +378,78 @@ svg {
     }
   }
 }
+
+
+
+
+
+
+
+
+details {
+  position: relative;
+  min-height: auto;
+  max-height: 100%;
+  transition: min-height 1.15s linear, max-height 1.5s linear;
+  -webkit-transition: min-height 1.15s linear, max-height 1.5s linear;
+  will-change: max-height;
+  overflow: hidden;
+  width: 100%;
+
+  summary {
+      display: flex;
+      cursor: pointer;
+      outline: 0;
+      align-items: center;
+      position: relative;
+
+      &::-webkit-details-marker {
+          display: none;
+      }
+
+      &::-moz-list-bullet {
+          list-style-type: none;
+      }
+
+      /*&::before {
+          content: "";
+          transition: transform .1s linear;
+          -webkit-transition: transform .1s linear;
+          background-image: url(../../../../assets/media/arrow.svg);
+          background-repeat: no-repeat;
+          background-size: 10px 6px;
+          margin-left: 15px;
+          width: 10px;
+          height: 6px;
+          order: 3;
+      }*/
+  }
+
+  &[open] {
+      min-height: auto;
+      max-height: 100%;
+
+      summary {
+
+          & ~ * {
+              opacity: 1;
+          }
+
+          &:before {
+              transform: rotate(-180deg);
+              -webkit-transform: rotate(-180deg);
+              -moz-transform: rotate(-180deg);
+          }
+      }
+  }
+}
+
+/*
+details[open] summary ~ * {
+  animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+  0%    {opacity: 0; margin-left: -10px}
+  100%  {opacity: 1; margin-left: 0px}
+}*/
