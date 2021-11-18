@@ -39,6 +39,7 @@
     max-width: 100%;
     max-height: 430px;
     position: relative;
+    overflow: hidden;
 
     @include before('md') {
       border-width: 10px;
