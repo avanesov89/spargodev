@@ -53,8 +53,8 @@
       font-weight: 600;
       font-size: 18px;
       line-height: 26px;
-      text-decoration:underline;
-      text-decoration-style: dashed;
+      /*text-decoration:underline;
+      text-decoration-style: dashed;*/
 
       @include before('xl') {
         font-size: 14px;
