@@ -197,3 +197,67 @@
     }
   }
 }
+
+
+
+.search__fixed {
+  background-color: #F8F9FB;
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 152px;
+  display: none;
+
+  @include before('md') {
+    padding: 25px 0;
+    top: 110px;
+  }
+
+  &-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-field {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+  }
+
+  &-input {
+    background-color: #fff;
+    padding: 13px 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    height: 42px;
+    max-width: 810px;
+    width: 100%;
+    font-size: 14px;
+    border: 1px solid var(--color-gray-300);
+
+    @include placeholder {
+      color: var(--color-gray-600);
+    }
+
+    &:hover {
+      &::placeholder {
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &-button {
+    max-height: 42px;
+  }
+}

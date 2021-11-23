@@ -80,18 +80,34 @@
         </ul>
       </nav>
 
-      <div class="header__search">
+      <div class="header__search" data-toggle="search__fixed">
         <svg>
           <use xlink:href="img/sprite.svg#search_icon"></use>
         </svg>
       </div>
 
-      <div class="header__adaptive">
-        <svg>
-          <use xlink:href="img/sprite.svg#adaptive_menu"></use>
-        </svg>
+      <div class="header__adaptive m-menu">
+        <a href="javascript:void(0);" class="menu-trigger">
+          <svg>
+            <use xlink:href="img/sprite.svg#adaptive_menu"></use>
+          </svg>
+        </a>
       </div>
     </div>
 
   </div>
 </header>
+
+
+
+
+<div class="search__fixed">
+  <div class="container">
+    <form class="search__fixed-form" action="№">
+      <div class="search__fixed-field">
+        <input type="search" class="search__fixed-input" placeholder="Введите ключевой запрос">
+        <button class="search__fixed-button main__button btn-reset" type="submit" value="Найти">Найти</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -397,7 +397,6 @@ details {
   transition: min-height 1.15s linear, max-height 1.5s linear;
   -webkit-transition: min-height 1.15s linear, max-height 1.5s linear;
   will-change: max-height;
-  overflow: hidden;
   width: 100%;
 
   summary {
