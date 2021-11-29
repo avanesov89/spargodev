@@ -75,3 +75,12 @@ $('.show-left').on('click', function(event){
 			div.hide(); 
 		}
 	});
+
+
+  $('.clients__list').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4
+  });

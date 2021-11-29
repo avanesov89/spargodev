@@ -106,9 +106,10 @@
   &__logo {
     
     &-link {
-      background: url(../img/logo.png) no-repeat scroll 0 0;
+      background: url(../img/logo.svg) no-repeat scroll 0 0;
       padding-top: 40px;
       width: 100%;
+      background-size: 210px;
       min-width: 210px;
       min-height: 71px;
       height: 100%;
