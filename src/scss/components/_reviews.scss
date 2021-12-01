@@ -119,4 +119,62 @@
       margin-top: 20px;
     }
   }
+
+  &__main {
+    padding: 80px 0 0;
+
+    @include before('lg') {
+      padding: 50px 0 0;
+    }
+
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 30px;
+
+      @include before('lg') {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .reviews__item {
+      padding: 25px;
+      flex-direction: column;
+      margin-bottom: 0;
+
+      &-top {
+        display: flex;
+        align-items: center;
+      }
+
+      @include before('lg') {
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+
+    .reviews__link {
+      margin-left: 0;
+    }
+
+    .reviews__text {
+      margin-top: 15px;
+      max-height: 110px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @include before('lg') {
+        max-height: 265px;
+      }
+    }
+
+    .main__button {
+      margin: 50px auto 0;
+
+      @include before('md') {
+        margin-top: 30px;
+      }
+    }
+  }
 }
