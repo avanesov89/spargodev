@@ -18,6 +18,8 @@
             border-left: 1px solid var(--color-gray-200);
             border-bottom: 1px solid var(--color-gray-200);
             font-size: 14px;
+            min-width: 150px;
+            width: auto;
 
             &:last-child {
                 border-right: 1px solid var(--color-gray-200);

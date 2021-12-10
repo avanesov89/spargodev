@@ -181,6 +181,17 @@ svg {
 }
 
 
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
+}
+
 
 .footnote {
   display: flex;
@@ -208,7 +219,7 @@ svg {
     }
 
     a {
-      color: var(--corporate-v-0);
+      color: var(--corporate-v-2);
     }
   }
 
@@ -253,7 +264,7 @@ svg {
     }
 
     @include after('md') {
-      display: table;
+      display: contents;
     }
   }
 
@@ -296,7 +307,7 @@ svg {
     }
   }
 
-  &-input {
+  &-input, &-files {
     background-color: #fff;
     border: 1px solid #fff;
     border-radius: 4px;
@@ -307,6 +318,11 @@ svg {
     box-shadow: 0px 2px 6px rgba(52, 73, 94, 0.15);
     text-overflow: ellipsis;
     font-size: 14px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    max-width: 500px;
+    text-overflow: ellipsis;
 
     @include placeholder {
       color: var(--color-gray-600);
@@ -325,7 +341,100 @@ svg {
         opacity: 0.3;
       }
     }
+
+    &--file {
+      width: 100%;
+    }
   }
+
+  &-files {
+    padding: 0;
+    background-image: url(../img/icon__files.svg);
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+  }
+
+  &-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 1px solid var(--color-gray-600);
+      border-radius: 4px;
+      margin-right: 8px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+    }
+
+    &+label {
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid var(--color-gray-600);
+        border-radius: 4px;
+        margin-right: 8px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+      }
+    }
+
+    &:checked+label::before {
+      border-color: var(--corporate-v-2);
+      background-color: var(--corporate-v-2);
+      background-image: url(../img/icon__checked_gray.svg);
+      background-repeat: no-repeat;
+      background-size: 12px 12px;
+    }
+  }
+
+  &-licenze {
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+  }
+
+
+  .field-file__input {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 100%;
+  }
+
+  .field-file__label {
+    padding: 0 40px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+
+    &--text {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 100%;
+      display: block;
+    }
+  }
+
 
   &-textarea {
     background-color: #fff;
@@ -412,6 +521,27 @@ svg {
 }
 
 
+.cookies {
+  position: fixed;
+  bottom: 20px;
+  font-size: 14px;
+  left: 20px;
+  background-color: var(--color-gray-300);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  display: none;
+  z-index: 100;
+
+  button {
+    display: table;
+    width: auto;
+    margin-top: 10px;
+  }
+}
+
 
 
 
@@ -481,3 +611,42 @@ details[open] summary ~ * {
   0%    {opacity: 0; margin-left: -10px}
   100%  {opacity: 1; margin-left: 0px}
 }*/
+
+
+.modal-overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease-in-out;
+}
+
+
+.modal-overlay--visible {
+	opacity: 1;
+	visibility: visible;
+	transition: all 0.3s ease-in-out;
+}
+
+.modal--visible {
+	display: block;
+}
+
+.disable-scroll {
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+}

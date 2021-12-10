@@ -52,7 +52,7 @@
     top: 0;
     padding-top: env(safe-area-inset-top);
     padding-bottom: 20px;
-    background: var(--corporate-v-1);
+    background: var(--color-gray-300);
     box-shadow: none;
     -webkit-transform: translateX(100%);
     -moz-transform: translateX(100%);
@@ -73,18 +73,18 @@
     
 
     &__title {
-        background: var(--corporate-v-0);
+        background: var(--color-gray-400);
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: center;
-        margin: 0 0 30px 0;
+        margin: 0 0 20px 0;
         padding: 0 20px;
         line-height: 50px;
         width: 100%;
         font-size: 16px;
-        font-weight: 600;
-        color: var(--color-gray-100);
+        font-weight: 700;
+        color: var(--corporate-v-0);
     }
     
 
@@ -95,7 +95,7 @@
         align-items: center;
 
         svg {
-            fill: var(--color-gray-100);
+            fill: var(--corporate-v-0);
             width: 25px;
             height: 25px;
         }
@@ -152,15 +152,16 @@
         &__link {
             display: flex;
             padding: 0 20px;
-            font-size: 13px;
+            font-size: 14px;
+            font-weight: 600;
             line-height: 1.5;
             height: 50px;
             align-items: center;
-            color: var(--color-gray-200);
+            color: var(--corporate-v-0);
             text-decoration: none;
 
             &:hover, &:focus, &:active  {
-                color: var(--corporate-v-3);
+                color: var(--corporate-v-2);
             }
         }
     }
@@ -168,7 +169,7 @@
     .sub-menu {
         height: 0;
         visibility: hidden;
-        background: rgba(255,255,255,0.1);
+        background: var(--color-gray-400);
         -webkit-transition: all 0.2s 0s, visibility 0s 0.2s;
         -moz-transition: all 0.2s 0s, visibility 0s 0.2s;
         transition: all 0.2s 0s, visibility 0s 0.2s;
@@ -198,7 +199,7 @@
             line-height: 20px;
             border: none;
             text-transform: none;
-            color: var(--color-gray-400);
+            color: var(--corporate-v-0);
             text-decoration: none;
             font-size: 14px;
 
@@ -211,7 +212,7 @@
             }
 
             &:hover, &:focus {
-                color: var(--corporate-v-3);
+                color: var(--corporate-v-2);
             }
         }
     }

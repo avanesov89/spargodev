@@ -6,8 +6,25 @@
   */
 
 
- const details = Array.from(document.querySelectorAll("details"));
 
+$(function() {
+  var btn = $(".header__search"), block = $(".search__fixed");
+  $(document).click(function(event) {
+          var target = $(event.target),cur;
+          if (target.is(".header__search")) {
+                  event.preventDefault();
+                  var index = btn.index(target);
+                  cur = block.eq(index).fadeToggle();
+                  target.toggleClass("open")
+            }
+          if (target.closest(".search__fixed").length) return;
+          block.not(cur).fadeOut("slow");
+          btn.not(target).removeClass("open")
+  })
+});
+
+// Accordeon
+ const details = Array.from(document.querySelectorAll("details"));
  // Add the onclick listeners.
  details.forEach((targetDetail) => {
    targetDetail.addEventListener("click", () => {
@@ -22,8 +39,7 @@
 
 
     
-  // MENU OPEN
-  
+// MENU OPEN
 //Открыть меню по клику на триггер
 $('.menu-trigger').on('click', function(event){
   event.preventDefault();
@@ -39,8 +55,7 @@ function toggleMenu(bool) {
       $('body, .body-overlay, .a-menu').toggleClass('menu-open', bool);
   };
   
-  // SUBMENU
-  
+// SUBMENU
 $('.menu__item-drop').on('click', function(){
   if( $('.menu__item-drop').hasClass('open') ) {
               $('.menu__item-drop, .sub-menu').removeClass('open');
@@ -50,37 +65,14 @@ $('.menu__item-drop').on('click', function(){
   });
 
 
-  $('.show-right').on('click', function(event){
-  $('.side-left').addClass('shifted');
-      $('.side-right').removeClass('shifted');
-});
-
-$('.show-left').on('click', function(event){
-  $('.side-right').addClass('shifted');
-      $('.side-left').removeClass('shifted');
-});
 
 
-
-
-  $(".header__search").click(function() {
-      $(".search__fixed").css({"display":"block"});
-  });
-
-
-  $(document).mouseup(function (e){ 
-		var div = $(".search__fixed");
-		if (!div.is(e.target) 
-		    && div.has(e.target).length === 0) { 
-			div.hide(); 
-		}
-	});
-
-
-  $('.clients__list').slick({
+$('.clients__list').slick({
     dots: true,
     infinite: false,
     speed: 300,
     slidesToShow: 4,
     slidesToScroll: 4
-  });
+});
+
+

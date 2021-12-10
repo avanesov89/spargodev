@@ -252,7 +252,7 @@
                 </div>
                 <ul class="app__documentation-list list-reset">
                     <li class="app__documentation-files">
-                        <a href="#" title="#" class="app__documentation-link">
+                        <a href="#" title="#" class="app__documentation-link transition">
                             <svg>
                                 <use xlink:href="img/sprite.svg#pdf-icon"></use>
                             </svg>
@@ -260,7 +260,7 @@
                         </a>
                     </li>
                     <li class="app__documentation-files">
-                        <a href="#" title="#" class="app__documentation-link">
+                        <a href="#" title="#" class="app__documentation-link transition">
                             <svg>
                                 <use xlink:href="img/sprite.svg#pdf-icon"></use>
                             </svg>
@@ -268,7 +268,7 @@
                         </a>
                     </li>
                     <li class="app__documentation-files">
-                        <a href="#" title="#" class="app__documentation-link">
+                        <a href="#" title="#" class="app__documentation-link transition">
                             <svg>
                                 <use xlink:href="img/sprite.svg#word-icon"></use>
                             </svg>
@@ -276,7 +276,7 @@
                         </a>
                     </li>
                     <li class="app__documentation-files">
-                        <a href="#" title="#" class="app__documentation-link">
+                        <a href="#" title="#" class="app__documentation-link transition">
                             <svg>
                                 <use xlink:href="img/sprite.svg#excel-icon"></use>
                             </svg>
@@ -289,14 +289,63 @@
                 <div class="app__documentation-title">
                     Системные требования
                 </div>
-                <img src="img/table_test.png" alt="">
 
+                <div class="app__documentation-table">
+                    <table>
+                        <thead>
+                          <tr>
+                            <th scope="col">Вид установки</th>
+                            <th scope="col">Процессор класса</th>
+                            <th scope="col">Объём оперативной памяти</th>
+                            <th scope="col">Дисковое пространство</th>
+                            <th scope="col">Предустановленное ПО</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Кассовый терминал</th>
+                            <td>1 процессор с 2-4 ядрами, с тактовой частотой от 1,8 ГГц</td>
+                            <td>1 GB - минимально<br>3 GB и более - рекомендуемый</td>
+                            <td>40 GB - минимально<br>100 GB и более - рекомендуемый</td>
+                            <td>
+                                Microsoft Windows XP SP3<br>
+                                Microsoft Windows 7<br>
+                                Microsoft Windows 8<br>
+                                Microsoft SQL Server 2008 R2/2012 Express
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Центральный сервер аптеки</th>
+                            <td>1 процессор с 4-8 ядрами, с тактовой частотой от 2 ГГц</td>
+                            <td>2 GB - минимально<br>4 GB и более - рекомендуемый</td>
+                            <td>100 GB - минимально<br>200 GB и более - рекомендуемый</td>
+                            <td>Microsoft Windows XP SP3<br>
+                                Microsoft Windows 7<br>
+                                Microsoft Windows 8<br>
+                                Microsoft SQL Server 2008 R2/2012 Express</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Сервер аптечной сети</th>
+                            <td>1-2 процессора, каждый с 4-8 ядрами, с тактовой частотой от 2 ГГц</td>
+                            <td>4 GB - минимально<br>16 GB и более - рекомендуемый</td>
+                            <td>2×100 Гб в RAID</td>
+                            <td>
+                                Windows XP PROF SP3<br>
+                                Microsoft Windows 7<br>
+                                Microsoft Windows 8<br>
+                                Microsoft Windows 2008 R2/2012 Server<br>
+                                Microsoft SQL Server 2008 R2/2012 Express (при БД до 10 Гб) или Standard Edition
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 
 
-    <div class="faq__section">
+    <div class="faq__section app__faq">
         <div class="container">
             <div class="row">
                 <div class="faq__section-title">

@@ -212,8 +212,11 @@
 
             <div class="main__form-field main__form-field--full main__form-field--buttons">
                 <button class="main__button btn-reset">Отправить сообщение</button>
-                <p class="main__form-text">Отправляя сообщение, вы автоматически соглашаетесь с условиями <a href="#"
-                        title="#" class="main__form-link">обработки персональных данных</a></p>
+
+                <div class="main__form-licenze">
+                    <input type="checkbox" class="main__form-checkbox" id="licenze" name="licenze" value="yes" required />
+                    <label for="licenze" class="main__form-text">Я согласен с условиями <a href="#" title="#" class="main__form-link">обработки персональных данных</a></label>
+                </div>
             </div>
         </form>
     </div>
