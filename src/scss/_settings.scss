@@ -97,7 +97,7 @@ svg {
 .text__block {
   ul {
     margin: 0 0 25px 0;
-    padding: 0 0 0 15px;
+    padding: 0 0 0 20px;
     list-style: none;
 
     li {
@@ -117,6 +117,22 @@ svg {
         border-radius: 50%;
         top: 9px;
       }
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  ol {
+    margin: 0 0 25px 20px;
+    padding: 0 0 0 15px;
+
+    li {
+      padding-left: 5px;
+      position: relative;
+      font-size: 16px;
+      line-height: 22px;
 
       &:not(:last-child) {
         margin-bottom: 5px;
@@ -256,15 +272,12 @@ svg {
 
   &-link {
     color: var(--corporate-v-2);
+    display: contents;
 
     &:hover,
     &:focus {
       text-decoration: underline;
       color: var(--corporate-v-3);
-    }
-
-    @include after('md') {
-      display: contents;
     }
   }
 
@@ -289,7 +302,7 @@ svg {
       margin-top: 10px;
 
       @include before('md') {
-        flex-direction: column;
+        flex-direction: column-reverse;
       }
     }
   }
@@ -379,6 +392,12 @@ svg {
       display: inline-flex;
       align-items: center;
       user-select: none;
+      text-align: left;
+
+      @include before('md') {
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
 
       &::before {
         content: '';
@@ -394,6 +413,8 @@ svg {
         background-position: center center;
         background-size: 50% 50%;
       }
+
+
     }
 
     &:checked+label::before {
@@ -442,6 +463,7 @@ svg {
     border-radius: 4px;
     padding: 15px;
     height: auto;
+    font-size: 14px;
     line-height: 20px;
     min-height: 190px;
     max-height: 190px;

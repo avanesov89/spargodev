@@ -99,8 +99,8 @@
   &-item {
     display: flex;
     flex-direction: column;
-    padding: 25px;
-    background-color: #fff;
+    background-color: rgba(248, 249, 250, 1);
+    transition: all 0.2s;
     border-radius: 4px;
     box-shadow: 0px 1px 6px rgba(52, 73, 94, 0.15);
     max-width: 360px;
@@ -109,9 +109,13 @@
       margin-right: 20px;
     }
 
+    &:hover, &:focus {
+      background-color: #fff;
+      transition: all 0.2s;
+    }
+
     @include before('xz') {
       min-width: 270px;
-      padding: 20px;
 
       &:not(:last-child) {
         margin-right: 15px;
@@ -121,10 +125,19 @@
 
   &-link {
     color: var(--corporate-v-1);
+    padding: 25px;
 
     &:focus,
     &:hover {
       color: var(--corporate-v-2);
+
+      .business__list-image {
+        fill: var(--corporate-v-2);
+      }
+    }
+
+    @include before('xz') {
+      padding: 20px;
     }
   }
 
@@ -132,7 +145,7 @@
     display: flex;
     align-items: center;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     max-width: 270px;
   }
 
@@ -142,12 +155,13 @@
     height: 45px;
     object-fit: cover;
     margin-right: 15px;
+    fill: var(--corporate-v-1);
   }
 
   &-content {
     font-size: 14px;
     line-height: 18px;
-    font-weight: 400;
+    font-weight: 300;
     margin-top: 15px;
   }
 }

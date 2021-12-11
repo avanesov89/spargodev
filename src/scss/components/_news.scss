@@ -264,6 +264,7 @@
   &__last {
     &.scrollableList {
       display: block;
+      width: 100%;
     }
 
 
@@ -273,12 +274,35 @@
           width: 100%;
           margin-left: 0;
           padding-left: 0;
+          justify-content: space-between;
 
           &::after {
             display: none;
           }
         }
       }
+    }
+
+    &-block {
+      &:not(:last-child) {
+        margin-right: 15px;
+
+        @include after('xxl') {
+          margin-right: 18px;
+        }
+      }
+
+     @include after('xl') {
+        min-width: 300px;
+        width: calc(100% / 4);
+        max-width: 340px;
+      }
+
+      @include before('xl') {
+        min-width: 270px;
+        max-width: 270px;
+      }
+
     }
 
 
@@ -290,21 +314,11 @@
       min-height: 240px;
       max-height: 240px;
       height: 100%;
-      min-width: 340px;
-      max-width: 340px;
       width: 100%;
       background-repeat: no-repeat;
       background-position: 50% 50%;
       background-size: cover;
       padding: 15px;
-
-      &:not(:last-child) {
-        margin-right: 15px;
-
-        @include after('xxl') {
-          margin-right: 18px;
-        }
-      }
 
       &::after {
         content: '';
@@ -325,16 +339,6 @@
           background-color: rgba(22, 29, 49, 0.2);
           transition: all 0.2s;
         }
-      }
-
-      @include from-to('xl', 'xxl') {
-        min-width: 300px;
-        max-width: 300px;
-      }
-
-      @include before('xl') {
-        min-width: 270px;
-        max-width: 270px;
       }
     }
 

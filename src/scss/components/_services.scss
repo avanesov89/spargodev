@@ -30,8 +30,11 @@
       &:hover,
       &:focus,
       &:active {
-        .services__item-title {
-          color: var(--corporate-v-3);
+        .services__item-title,
+        .services__item-image,
+        .services__item-description {
+          color: var(--corporate-v-2);
+          fill: var(--corporate-v-2);
           transition: all 0.2s;
         }
       }
@@ -39,7 +42,7 @@
 
     &-title {
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 500;
       color: var(--corporate-v-1);
       display: flex;
       align-items: center;
@@ -59,19 +62,26 @@
       object-fit: cover;
       margin-right: 10px;
       flex-shrink: 0;
+      fill: var(--corporate-v-1);
     }
 
     &-block {
       background-color: rgba(248, 249, 250, 0.5);
       box-shadow: 0px 1px 6px rgba(52, 73, 94, 0.15);
       border-radius: 10px;
+      transition: all 0.2s;
+
+      &:hover, &:focus {
+        background-color: #fff;
+        transition: all 0.2s;
+      }
     }
 
     &-description {
       font-size: 14px;
       line-height: 18px;
       color: var(--corporate-v-1);
-      font-weight: 600;
+      font-weight: 500;
       margin-top: 20px;
     }
 

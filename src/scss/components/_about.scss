@@ -125,7 +125,11 @@
             @include after('xl') {
                 width: 100%;
                 margin-left: 0;
-                padding: 10px 0 5px;
+                padding: 10px 2px 5px;
+
+                &::after {
+                    display: none;
+                }
             }
         }
 
@@ -133,6 +137,13 @@
             box-shadow: 0px 2px 6px rgba(52, 73, 94, 0.15);
             background-color: rgba(248, 249, 250, 1);
             border-radius: 4px;
+            min-width: 320px;
+            transition: all 0.2s;
+
+            &:hover, &:focus {
+                background-color: #fff;
+                transition: all 0.2s;
+            }
 
             &:not(:last-child) {
                 margin-right: 20px;
@@ -141,25 +152,25 @@
                     margin-right: 15px;
                 }
             }
+
+            @include before('md') {
+              min-width: 270px;
+            }
+
+            @include after('xl') {
+              width: calc(100% / 4);
+              min-width: auto;
+            }
         }
 
         &-item {
             display: flex;
             align-items: center;
-            padding: 30px;
-            min-width: 337px;
+            width: 100%;
             height: 100%;
             color: var(--corporate-v-1);
             transition: all 0.2s;
-
-            @include from-to('lg', 'xxl') {
-                min-width: 300px;
-            }
-
-            @include before('md') {
-                padding: 25px;
-                min-width: auto;
-            }
+            padding: 30px;
 
             svg {
                 fill: var(--corporate-v-1);
@@ -167,13 +178,17 @@
             }
 
             &:hover, &:focus {
-                color: var(--corporate-v-3);
+                color: var(--corporate-v-2);
                 transition: all 0.2s;
 
                 svg {
-                    fill: var(--corporate-v-3);
+                    fill: var(--corporate-v-2);
                     transition: all 0.2s;
                 }
+            }
+
+            @include before('md') {
+                padding: 25px;
             }
         }
 
@@ -208,10 +223,10 @@
         &-title {
             font-size: 22px;
             line-height: 28px;
+            white-space: nowrap;
 
             @include before('md') {
                 font-size: 20px;
-                white-space: nowrap;
             }
         }
     }

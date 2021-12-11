@@ -18,8 +18,8 @@
     margin-bottom: 30px;
 
     @include before('lg') {
-      font-size: 20px;
-      line-height: 30px;
+      font-size: 24px;
+      line-height: 32px;
       margin-bottom: 20px;
     }
   }
@@ -33,8 +33,36 @@
     margin-bottom: 20px;
 
     @include before('lg') {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+    color: var(--corporate-v-0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @include before('lg') {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+
+  h4, h5, h6 {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    color: var(--corporate-v-0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @include before('lg') {
       font-size: 18px;
-      line-height: 24px;
+      line-height: 22px;
     }
   }
 

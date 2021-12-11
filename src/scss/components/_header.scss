@@ -229,6 +229,7 @@
   position: absolute;
   top: 152px;
   display: none;
+  z-index: 10;
 
   @include before('md') {
     padding: 25px 0;
