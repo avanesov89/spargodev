@@ -299,7 +299,7 @@
   &-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 30px;
+    grid-gap: 30px;
 
     @include before('xz') {
       display: flex;
@@ -328,6 +328,33 @@
         flex-shrink: 0;
       }
     }
+
+    &--page {
+      @include before('xz') {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 30px;
+        overflow: hidden;
+        margin: 0;
+        width: 100%;
+        position: relative;
+        padding: 0;
+        left: 0;
+  
+        &::-webkit-scrollbar {
+          width: 0;
+          height: 0;
+        }
+  
+        &:after {
+          display: none;
+        }
+      }
+
+      @include from-to('md', 'xz') {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
   }
 
   &-item {
@@ -346,6 +373,15 @@
 
       &:not(:last-child) {
         margin-right: 20px;
+      }
+    }
+
+    &--page {
+      @include before('xz') {
+        max-width: none;
+        &:not(:last-child) {
+          margin-right: 0;
+        }
       }
     }
   }
