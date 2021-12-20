@@ -83,7 +83,7 @@
 
         &:hover,
         &:focus {
-          color: var(--corporate-v-3);
+          color: var(--corporate-v-2);
           text-decoration: underline;
         }
       }
@@ -112,6 +112,13 @@
       font-size: 14px;
     }
 
+    &-date {
+        font-family: OpenSans;
+        font-weight: 600;
+        font-size: 12px;
+        color: var(--color-gray-600);
+    }
+
     &-more {
       color: var(--corporate-v-0);
       display: flex;
@@ -127,11 +134,11 @@
 
       &:hover,
       &:focus {
-        color: var(--corporate-v-3);
+        color: var(--corporate-v-2);
         text-decoration: underline;
 
         svg {
-          fill: var(--corporate-v-3);
+          fill: var(--corporate-v-2);
         }
       }
     }
@@ -220,35 +227,53 @@
 
 
   &__element {
+
     &-detail {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       font-size: 14px;
-      color: var(--corporate-v-0);
+      color: var(--color-gray-600);
       margin-bottom: 25px;
     }
 
-    &-date {
-      padding-right: 15px;
-      margin-right: 15px;
+    &-item {
+      padding-right: 10px;
+      margin-right: 10px;
+      margin-bottom: 5px;
       position: relative;
 
-      &::after {
-        content: '';
-        width: 1px;
-        height: 17px;
-        background-color: var(--color-gray-200);
-        position: absolute;
-        right: 0;
-        top: 0;
+      span {
+        font-family: OpenSans;
+        font-weight: 600;
+        font-size: 12px;
       }
+
+      &:not(:last-child) {
+        &::after {
+          content: '';
+          width: 3px;
+          height: 3px;
+          background-color: var(--color-gray-600);
+          position: absolute;
+          right: 0;
+          top: 6px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &-date {
+      font-family: OpenSans;
+      font-weight: 600;
+      font-size: 12px;
     }
 
     &-bottom {
       width: 100%;
       border-top: 1px solid var(--color-gray-200);
       padding-top: 30px;
-      margin-top: 30px;
+      margin-top: 50px;
 
       span {
         margin-right: 10px;
@@ -259,8 +284,27 @@
 
     &-img {
       display: flex;
-      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       margin: 20px 0 40px;
+    }
+
+    &-image {
+      border-radius: 10px;
+      border: 20px solid var(--color-gray-300);
+      object-fit: cover;
+
+      @include before('md') {
+        border-width: 10px;
+      }
+    }
+
+    &-tooltip {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-gray-900);
+      margin-top: 5px;
+      text-align: center;
     }
   }
 

@@ -4,14 +4,17 @@
             <div class="wrapper__content text__block news__element">
 
                 <div class="news__element-detail">
-                    <div class="news__element-date">
-                        28 декабря 2017
+                    <time class="news__element-item news__element-date">
+                        28.12.2021
+                    </time>
+                    <div class="news__element-item">
+                        просмотров: <span>1352</span>
                     </div>
-                    <div class="news__element-views">
-                        Просмотров: 1352
+                    <div class="news__element-item">
+                        автор: Илья Кошевой
                     </div>
-                    <div class="news__element-views">
-                        Автор: Кошевой И.М.
+                    <div class="news__element-item">
+                        комментариев: <span>2</span>
                     </div>
                 </div>
 
@@ -20,9 +23,6 @@
                     проекта ИС «Маркировка»
                 </h1>
 
-                <div class="news__element-img">
-                    <img src="img/news_img.jpg" alt="#" class="news__element-image">
-                </div>
 <div class="wrapper__content-code">
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;ru&quot;&gt;
@@ -55,6 +55,12 @@
                         двумерного штрих-кода.</li>
                 </ul>
 
+                <div class="news__element-img">
+                    <img src="img/blog-page-img.png" alt="#" class="news__element-image">
+                    <div class="news__element-tooltip">пример вызова кода для авторизации в приложении</div>
+                </div>
+
+
                 <p>В переходный период схемы обмена данными могут неоднократно меняться, поэтому особое внимание нужно
                     уделить выбору программного обеспечения, которое легко адаптируется под необходимые нововведения.
                     Решения АО «Спарго Технологии» помогут вовремя и с минимальными затратами начать работу в
@@ -69,35 +75,60 @@
                         штрих-кода формата DATAMATRIX).</li>
                 </ul>
 
+                <p>Пример кода в песочнице выглядит так:</p>
+
+                <div class="codepen__import">
+                    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="qBdQYLJ" data-user="designcouch" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                        <span>See the Pen <a href="https://codepen.io/designcouch/pen/qBdQYLJ">
+                        Codepen Challenge - Hello World</a> by Jesse Couch (<a href="https://codepen.io/designcouch">@designcouch</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </div>
+
                 <p>Получить дополнительную консультацию и обновленную версию программного обеспечения можно у наших
                     специалистов.</p>
 
 
-                <div class="news__element-bottom">
-                    <div class="tags">
-                        <span>Теги:</span>
-                        <a href="#" title="#" class="tags__item transition">
-                            фармацевтически рынок
-                        </a>
-                        <a href="#" title="#" class="tags__item transition">
-                            решения
-                        </a>
-                        <a href="#" title="#" class="tags__item transition">
-                            проекты
-                        </a>
-                        <a href="#" title="#" class="tags__item transition">
-                            автоматизация аптек
-                        </a>
-                        <a href="#" title="#" class="tags__item transition">
-                            аптека
-                        </a>
-                        <a href="#" title="#" class="tags__item transition">
-                            новости компании
-                        </a>
-                        <a href="#" title="#" class="tags__item transition">
-                            опыт внедрения
-                        </a>
+                <div class="news__element-bottom blog__info">
+                    <div class="blog__info-text">
+                        Автор: 
+                        <div class="blog__info-author">
+                            <div class="blog__info-img">
+                                <img src="img/blog_author_img.png" alt="Илья Кошевой" class="blog__info-image">
+                            </div>
+                            <div class="blog__info-name">
+                                Илья Кошевой
+                                <div class="blog__info-status">
+                                    Senior программист, team leader, кандидат технических наук
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="blog__info-text">
+                        Технологии: 
+                        <div class="tags">
+                            <a href="#" title="#" class="tags__item transition">
+                                react
+                            </a>
+                            <a href="#" title="#" class="tags__item transition">
+                                android
+                            </a>
+                            <a href="#" title="#" class="tags__item transition">
+                                спарго технологии
+                            </a>
+                            <a href="#" title="#" class="tags__item transition">
+                                iOS
+                            </a>
+                            <a href="#" title="#" class="tags__item transition">
+                                автоматизация аптек
+                            </a>
+                            <a href="#" title="#" class="tags__item transition">
+                                visual studio code
+                            </a>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -105,75 +136,11 @@
 
     <div class="container">
         <div class="row">
-            <div class="news__last scrollableList">
-                <div class="scrollableList__title">
-                    Последние материалы
-                </div>
-                <div class="scrollableList__items">
-                    <div class="news__last-block">
-                        <a href="#" title="#" class="news__last-item transition"
-                            style="background-image: url(img/news_img.jpg);">
-                            <div class="news__last-prompt">
-                                Новости
-                            </div>
-                            <div class="news__last-title">
-                                Система «электронный рецепт» в аптеке: как все правильно организовать
-                            </div>
-                            <div class="news__last-date">
-                                09.09.2021
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="news__last-block">
-                        <a href="#" title="#" class="news__last-item transition"
-                            style="background-image: url(img/news_item2.jpg);">
-                            <div class="news__last-prompt">
-                                Фармацевтический рынок
-                            </div>
-                            <div class="news__last-title">
-                                Клиенты АО «Спарго Технологии» смогут протестировать программное обеспечение до
-                                окончания
-                                пилотного проекта ИС «Маркировка»
-                            </div>
-                            <div class="news__last-date">
-                                09.09.2021
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="news__last-block">
-                        <a href="#" title="#" class="news__last-item transition"
-                            style="background-image: url(img/news_item1.jpg);">
-                            <div class="news__last-prompt">
-                                Новости
-                            </div>
-                            <div class="news__last-title">
-                                Система «электронный рецепт» в аптеке: как все правильно организовать
-                            </div>
-                            <div class="news__last-date">
-                                09.09.2021
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="news__last-block">
-                        <a href="#" title="#" class="news__last-item transition"
-                            style="background-image: url(img/news_item3.jpg);">
-                            <div class="news__last-prompt">
-                                Новости
-                            </div>
-                            <div class="news__last-title">
-                                Система «электронный рецепт» в аптеке: как все правильно организовать
-                            </div>
-                            <div class="news__last-date">
-                                09.09.2021
-                            </div>
-                        </a>
-                    </div>
+            <div class="cooments__section">
+                <div class="cooments__section-title">
+                    Комментариев: 2
                 </div>
             </div>
-
         </div>
     </div>
 
