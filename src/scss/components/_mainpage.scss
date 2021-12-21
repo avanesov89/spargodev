@@ -28,6 +28,7 @@
     font-weight: 800;
     margin-top: 0;
     margin-bottom: 30px;
+    max-width: 800px;
 
     @include before('md') {
       font-size: 24px;
@@ -41,6 +42,7 @@
     font-weight: 700;
     line-height: 30px;
     margin: 0;
+    max-width: 800px;
 
     @include before('md') {
       font-size: 16px;
@@ -405,9 +407,10 @@
   }
 
   &-date {
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: 'OpenSans';
+    font-weight: 600;
     color: var(--color-gray-600);
     margin-bottom: 10px;
   }

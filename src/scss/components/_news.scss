@@ -238,10 +238,16 @@
     }
 
     &-item {
-      padding-right: 10px;
-      margin-right: 10px;
-      margin-bottom: 5px;
       position: relative;
+
+      &:not(:last-child) {
+        padding-right: 10px;
+        margin-right: 10px;
+      }
+
+      @include before('md') {
+        margin-bottom: 5px;
+      }
 
       span {
         font-family: OpenSans;

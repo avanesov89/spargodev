@@ -61,7 +61,7 @@
             transition: all 0.2s;
 
             &:hover, &:focus, &:active {
-                color: var(--corporate-v-3);
+                color: lighten(#337AB7, 20.25%);
                 text-decoration: none;
                 transition: all 0.2s;
             }
@@ -111,8 +111,7 @@
             transition: all 0.2s;
 
             &:hover, &:focus, &:active {
-                color: var(--corporate-v-3);
-                text-decoration: underline;
+                color: lighten(#337AB7, 20.25%);
                 transition: all 0.2s;
             }
         }
@@ -129,7 +128,7 @@
             transition: all 0.2s;
 
             &:hover, &:focus, &:active {
-                color: var(--corporate-v-3);
+                color: lighten(#337AB7, 20.25%);
                 transition: all 0.2s;
             }
         }
@@ -175,7 +174,7 @@
 
             &:hover, &:focus, &:active {
                 svg {
-                    fill: var(--corporate-v-3);
+                    fill: lighten(#337AB7, 20.25%);
                     transition: all 0.2s;
                 }
             }
@@ -227,17 +226,17 @@
             }
 
             &:hover, &:focus, &:active {
-                color: var(--corporate-v-3);
-                text-decoration: underline;
+                color: lighten(#337AB7, 20.25%);
+                text-decoration: none;
                 transition: all 0.2s;
 
                 &::before {
-                    background-color: var(--corporate-v-3);
+                    background-color: lighten(#337AB7, 20.25%);
                 }
             }
 
             &--active {
-                color: var(--corporate-v-3);
+                color: lighten(#337AB7, 20.25%);
                 text-decoration: underline;
             }
         }
@@ -300,7 +299,7 @@
         }
 
         &-link {
-            color: var(--corporate-v-3);
+            color: lighten(#337AB7, 20.25%);
             text-decoration: underline;
             transition: all 0.2s;
 
