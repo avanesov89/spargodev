@@ -336,7 +336,7 @@
             }
 
             &:hover, &:focus, &:active {
-                color: var(--corporate-v-3);
+                color: lighten(#337AB7, 20.25%);
                 text-decoration: none;
                 transition: all 0.2s;
             }

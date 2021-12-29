@@ -389,8 +389,8 @@
   }
 
   &-title {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 20px;
+    line-height: 26px;
     color: var(--corporate-v-0);
     font-weight: 600;
     margin-bottom: 10px;
@@ -403,6 +403,7 @@
     &:hover,
     &:focus {
       color: var(--corporate-v-2);
+      text-decoration: underline;
     }
   }
 
