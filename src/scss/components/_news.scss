@@ -263,8 +263,9 @@
           background-color: var(--color-gray-600);
           position: absolute;
           right: 0;
-          top: 6px;
+          top: 50%;
           border-radius: 50%;
+          transform: translateY(-50%);
         }
       }
     }

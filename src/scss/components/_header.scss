@@ -165,6 +165,11 @@
         color: var(--corporate-v-2);
         transition: all 0.2s;
       }
+
+      &--active {
+        color: var(--corporate-v-2);
+        border-bottom: 2px solid var(--corporate-v-2);
+      }
     }
   }
 

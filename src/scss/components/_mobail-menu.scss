@@ -163,6 +163,11 @@
             &:hover, &:focus, &:active  {
                 color: var(--corporate-v-2);
             }
+
+            &--active {
+                color: var(--corporate-v-2);
+                text-decoration: underline;
+            }
         }
     }
     
