@@ -84,6 +84,10 @@
             }
         }
 
+        &-noimage {
+            display: none;
+        }
+
         &-content {
             padding: 15px 20px 20px;
             display: flex;
@@ -129,10 +133,7 @@
             justify-content: space-between;
             align-items: center;
             margin-top: auto;
-
-            @include before('md') {
-                padding-top: 20px;
-            }
+            padding-top: 20px;
 
             .news__element-detail {
                 margin-bottom: 0;
