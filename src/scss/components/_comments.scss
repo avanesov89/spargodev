@@ -55,19 +55,15 @@
 
         &-content {
             margin-top: 15px;
-            line-height: 22px;
-
-            @include before('md') {
-                font-size: 14px;
-                line-height: 20px;
-            }
+            font-size: 14px;
+            line-height: 20px;
         }
 
         &-answer {
             display: table;
             color: var(--corporate-v-2);
             text-decoration: underline;
-            margin-top: 20px;
+            margin-left: auto;
             font-weight: 600;
             font-size: 14px;
             cursor: pointer;
@@ -109,13 +105,9 @@
     }
     
     &__detail {
-        @include flex-all-sb;
-        width: 100%;
-
-        @include before('md') {
-            flex-direction: column;
-            align-items: flex-start;
-        }
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
         &-list {
             @include flex-v-center;
@@ -124,11 +116,8 @@
         &-name {
             color: var(--color-gray-900);
             font-weight: 600;
-            font-size: 18px;
-
-            @include before('md') {
-                margin-bottom: 5px;
-            }
+            font-size: 16px;
+            margin-bottom: 5px;
         }
 
         &-element {
