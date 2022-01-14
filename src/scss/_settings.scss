@@ -94,8 +94,17 @@ pre {
   font-weight: 600;
 }
 
+.wpcf7-response-output {
+  color: var(--color-status-info);
+  border: none;
+  padding: 0;
+  font-weight: bold;
+  border-radius: 0;
+  text-align: left;
+  width: max-content;
+}
+
 .wpcf7 form.sent .wpcf7-response-output {
-  border-color: var(--color-status-succes);
   color: var(--color-status-succes);
 }
 
@@ -281,6 +290,8 @@ pre {
 
     a {
       color: var(--corporate-v-2);
+      font-weight: 600;
+      text-decoration: underline;
     }
   }
 
@@ -402,6 +413,21 @@ pre {
 
     &--file {
       width: 100%;
+    }
+  }
+
+  &-input {
+    &.wpcf7-not-valid {
+      border-color: var(--color-status-danger);
+      background-image: url(../img/icon__error.svg);
+      background-size: 25px 25px;
+      background-repeat: no-repeat;
+      background-position: 97% 50%;
+
+      @include placeholder {
+        color: var(--color-status-danger);
+        opacity: 1;
+      }
     }
   }
 
@@ -535,6 +561,13 @@ pre {
         opacity: 0.3;
       }
     }
+  }
+
+  .wpcf7-not-valid-tip {
+    font-size: 12px;
+    margin: 10px 15px 0;
+    font-weight: 600;
+    color: var(--color-status-danger);
   }
 }
 
@@ -716,4 +749,9 @@ details[open] summary ~ * {
 	left: 0;
 	top: 0;
 	width: 100%;
+}
+
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+
 }
