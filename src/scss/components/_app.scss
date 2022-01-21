@@ -481,6 +481,7 @@
       position: relative;
       padding-left: 40px;
       flex-direction: column;
+      font-weight: 600;
 
       &:hover, &:focus {
         text-decoration: underline;
@@ -495,7 +496,7 @@
       }
 
       span {
-        font-weight: 600;
+        font-weight: 800;
       }
     }
   }
