@@ -248,6 +248,20 @@ pre {
     color: var(--corporate-v-2);
     transition: all 0.2s;
   }
+
+  &-outline {
+    background-color: var(--color-gray-100);
+    color: var(--corporate-v-2);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: var(--corporate-v-2);
+      color: var(--color-gray-100);
+      transition: all 0.2s;
+    }
+  }
 }
 
 
