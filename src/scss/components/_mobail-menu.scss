@@ -33,15 +33,6 @@
     }
 }
 
-
-@supports(padding:max(0px)) {
-    .a-menu {
-        padding-bottom: min(0vmin, env(safe-area-inset-bottom));
-    }
-}
-
-
-
 .a-menu {
     position: fixed;
     overflow: auto;
