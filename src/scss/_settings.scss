@@ -58,11 +58,6 @@ p {
   }
 }
 
-svg {
-  width: 20px;
-  height: 20px;
-}
-
 pre {
   padding:15px;
   width: max-content;
@@ -85,6 +80,7 @@ pre {
   display: none !important; // stylelint-disable-line declaration-no-important
 }
 
+
 .wpcf7 form .wpcf7-response-output {
   margin: 0;
   border-radius: 4px;
@@ -92,27 +88,75 @@ pre {
   padding: 10px 15px;
   text-align: center;
   font-weight: 600;
+  font-size: 14px;
+}
+
+.wpcf7-spinner {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  bottom: -10px;
+  right: -10px;
+  width: auto;
+  height: auto;
+  background-color: rgba(22,29,43,0.05);
+  opacity: 1;
+  border-radius: 4px;
+  margin: 0;
+
+  &::before {
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--corporate-v-2);
+  }
 }
 
 .wpcf7-response-output {
-  color: var(--color-status-info);
+  color: var(--color-status-danger);
   border: none;
   padding: 0;
   font-weight: bold;
   border-radius: 0;
   text-align: left;
-  width: max-content;
+  width: auto;
+  max-width: max-content;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output {
+  border-color: var(--color-status-danger);
 }
 
 .wpcf7 form.sent .wpcf7-response-output {
   color: var(--color-status-succes);
 }
 
+.wpcf7-form-control-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
 .wpcf7-list-item {
   font-size: 14px;
+  margin: 0;
+
+  @include before('md') {
+    margin-top: 10px;
+  }
 }
+
+.wpcf7-submit {
+  @include after('md') {
+    margin-right: 15px;
+  }
+}
+
 .wpcf7-list-item-label {
   display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .btn-reset {
@@ -137,15 +181,6 @@ pre {
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
-}
-
-.transition {
-  transition: all 0.2s;
-
-  &:hover,
-  &:focus {
-    transition: all 0.2s;
-  }
 }
 
 .text__block {
@@ -237,29 +272,55 @@ pre {
   font-size: 16px;
   font-weight: 700;
   color: var(--color-gray-100);
-  transition: all 0.2s;
+  transition: color 0.2s, background-color 0.2s;
   white-space: nowrap;
 
-  &:hover,
-  &:focus,
-  &:active,
   &.active {
     background-color: var(--color-gray-100);
     color: var(--corporate-v-2);
-    transition: all 0.2s;
+    transition: color 0.2s, background-color 0.2s;
+  }
+
+  &:hover, &:focus {
+    @include hover {
+      background-color: var(--color-gray-100);
+      color: var(--corporate-v-2);
+      transition: color 0.2s, background-color 0.2s;
+    }
+  }
+
+  &:focus {
+    @include coarse {
+      background-color: var(--color-gray-100);
+      color: var(--corporate-v-2);
+      transition: color 0.2s, background-color 0.2s;
+    }
   }
 
   &-outline {
     background-color: var(--color-gray-100);
     color: var(--corporate-v-2);
 
-    &:hover,
-    &:focus,
-    &:active,
+    &:hover, &:focus {
+      @include hover {
+        background-color: var(--corporate-v-2);
+        color: var(--color-gray-100);
+        transition: color 0.2s, background-color 0.2s;
+      }
+    }
+  
+    &:focus {
+      @include coarse {
+        background-color: var(--corporate-v-2);
+        color: var(--color-gray-100);
+        transition: color 0.2s, background-color 0.2s;
+      }
+    }
+
     &.active {
       background-color: var(--corporate-v-2);
       color: var(--color-gray-100);
-      transition: all 0.2s;
+      transition: color 0.2s, background-color 0.2s;
     }
   }
 }
@@ -316,16 +377,30 @@ pre {
   }
 }
 
-
-
 .main__form {
   display: grid;
   grid-gap: 30px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 450px);
+  position: relative;
+
+  p {
+    margin: 0;
+  }
+
+  .field-file__label--text {
+    height: 48px;
+    line-height: 48px;
+    color: var(--color-gray-600);
+    font-size: 14px;
+  }
+
+  @include before('lg') {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
 
   @include before('md') {
     grid-template-columns: 1fr;
-    grid-gap: 20px;
   }
 
   &-text {
@@ -406,6 +481,14 @@ pre {
     overflow: hidden;
     max-width: 500px;
     text-overflow: ellipsis;
+
+    @include before('xl') {
+      max-width: 100%;
+    }
+
+    @include before('xl') {
+      font-size: 16px;
+    }
 
     @include placeholder {
       color: var(--color-gray-600);
@@ -515,6 +598,10 @@ pre {
     flex-direction: row;
     align-items: center;
     display: flex;
+
+    @include before('md') {
+      flex-direction: column;
+    }
   }
 
 
@@ -575,6 +662,15 @@ pre {
         opacity: 0.3;
       }
     }
+
+    &.wpcf7-not-valid {
+      border-color: var(--color-status-danger);
+
+      @include placeholder {
+        color: var(--color-status-danger);
+        opacity: 1;
+      }
+    }
   }
 
   .wpcf7-not-valid-tip {
@@ -582,6 +678,12 @@ pre {
     margin: 10px 15px 0;
     font-weight: 600;
     color: var(--color-status-danger);
+    width: auto;
+    white-space: break-spaces;
+  }
+
+  p {
+    margin: 0;
   }
 }
 
@@ -599,11 +701,17 @@ pre {
     line-height: 16px;
     color: var(--corporate-v-1);
     margin: 0 5px 5px 0;
+    transition: color 0.2s;
 
     &:hover {
       color: var(--color-gray-100);
+      transition: color 0.2s;
     }
   }
+}
+
+.transition {
+  transition: color 0.2s, fill 0.2s, background-color 0.2s; 
 }
 
 
@@ -741,14 +849,14 @@ details[open] summary ~ * {
 	width: 100%;
 	opacity: 0;
 	visibility: hidden;
-	transition: all 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
 }
 
 
 .modal-overlay--visible {
 	opacity: 1;
 	visibility: visible;
-	transition: all 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
 }
 
 .modal--visible {
@@ -766,6 +874,110 @@ details[open] summary ~ * {
 }
 
 
-.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
 
+.main__form {
+
+  .wpcf7-acceptance input[type=checkbox]:checked,
+  .main__form .wpcf7-acceptance input[type=checkbox]:not(:checked) {
+    position: absolute;
+    left: -9999px
+  }
+
+  .wpcf7-acceptance input[type=checkbox]:checked+.wpcf7-list-item-label,
+  .main__form .wpcf7-acceptance input[type=checkbox]:not(:checked)+.wpcf7-list-item-label {
+    cursor: pointer
+  }
+
+  .wpcf7-acceptance input[type=checkbox]:checked+.wpcf7-list-item-label:before,
+  .main__form .wpcf7-acceptance input[type=checkbox]:not(:checked)+.wpcf7-list-item-label:before {
+    content: '';
+    border-color: var(--corporate-v-2);
+    background-color: var(--corporate-v-2);
+    background-image: url(../img/icon__checked_gray.svg);
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+  }
+
+  .wpcf7-acceptance input[type=checkbox]+.wpcf7-list-item-label:before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid var(--color-gray-600);
+    border-radius: 4px;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+}
+
+
+#toTop {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-gray-500);
+  border-radius: 4px;
+  background: var(--color-gray-500);
+  fill: var(--color-gray-100);
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  cursor: pointer;
+  display: none;
+
+  &:hover, &:focus {
+    @include hover {
+      background-color: var(--color-gray-100);
+      border: 2px solid var(--corporate-v-2);
+      fill: var(--corporate-v-2);
+      transition: fill 0.2s, background-color 0.2s;
+    }
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+blockquote {
+  margin: 0 0 30px 0;
+  padding: 15px 15px 15px 50px;
+  border-radius: 4px;
+  background: url(../img/blockquote.svg) 10px 15px/30px 30px #f8f9fa no-repeat;
+  box-shadow: 0 1px 6px rgba(52,73,94,.15);
+}
+
+.video__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30px;
+
+  @include before('lg') {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include before('md') {
+    grid-template-columns: 1fr;
+  }
+
+  &-title {
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  iframe {
+    width: 100%;
+  }
 }

@@ -93,6 +93,7 @@
             padding: 15px 20px 20px;
             display: flex;
             flex-direction: column;
+            width: 100%;
         }
 
         h3 {
@@ -165,17 +166,23 @@
             font-size: 14px;
             line-height: 18px;
             color: var(--corporate-v-0);
+            transition: color 0.2s;
 
             svg {
                 fill: var(--corporate-v-0);
+                width: 18px;
+                height: 18px;
+                transition: fill 0.2s;
             }
 
             &:hover, &:focus {
                 color: var(--corporate-v-2);
                 text-decoration: underline;
+                transition: color 0.2s;
                 
                 svg {
                     fill: var(--corporate-v-2);
+                    transition: fill 0.2s;
                 }
             }
         }

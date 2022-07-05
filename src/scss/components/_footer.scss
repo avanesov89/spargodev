@@ -41,6 +41,11 @@
                flex-basis: 100%;
            }
         }
+
+        &-subscription {
+            max-width: 350px;
+            position: relative;
+        }
     }
 
     &__mails {
@@ -58,12 +63,14 @@
             font-weight: 800;
             color: var(--color-gray-100);
             text-decoration: underline;
-            transition: all 0.2s;
+            transition: color 0.2s;
 
-            &:hover, &:focus, &:active {
-                color: lighten(#337AB7, 20.25%);
-                text-decoration: none;
-                transition: all 0.2s;
+            &:hover, &:focus {
+                @include hover {
+                    color: lighten(#337AB7, 20.25%);
+                    text-decoration: none;
+                    transition: color 0.2s;
+                }
             }
         }
     }
@@ -108,11 +115,13 @@
             color: var(--color-gray-100);
             font-weight: 800;
             font-size: 20px;
-            transition: all 0.2s;
+            transition: color 0.2s;
 
-            &:hover, &:focus, &:active {
-                color: lighten(#337AB7, 20.25%);
-                transition: all 0.2s;
+            &:hover, &:focus {
+                @include hover {
+                    color: lighten(#337AB7, 20.25%);
+                    transition: color 0.2s;
+                }
             }
         }
 
@@ -125,11 +134,13 @@
 
         &-callback {
             cursor: pointer;
-            transition: all 0.2s;
+            transition: color 0.2s;
 
-            &:hover, &:focus, &:active {
-                color: lighten(#337AB7, 20.25%);
-                transition: all 0.2s;
+            &:hover, &:focus {
+                @include hover {
+                    color: lighten(#337AB7, 20.25%);
+                    transition: color 0.2s;
+                }
             }
         }
 
@@ -167,15 +178,17 @@
             svg {
                 fill: var(--color-gray-100);
                 margin-right: 5px;
-                transition: all 0.2s;
+                transition: fill 0.2s;
                 width: 20px;
                 height: 20px;
             }
 
-            &:hover, &:focus, &:active {
-                svg {
-                    fill: lighten(#337AB7, 20.25%);
-                    transition: all 0.2s;
+            &:hover, &:focus {
+                @include hover {
+                    svg {
+                        fill: lighten(#337AB7, 20.25%);
+                        transition: fill 0.2s;
+                    }
                 }
             }
         }
@@ -214,7 +227,7 @@
             position: relative;
             display: flex;
             align-items: center;
-            transition: all 0.2s;
+            transition: color 0.2s;
 
             &::before {
                 content: '';
@@ -225,13 +238,15 @@
                 margin-right: 10px;
             }
 
-            &:hover, &:focus, &:active {
-                color: lighten(#337AB7, 20.25%);
-                text-decoration: none;
-                transition: all 0.2s;
+            &:hover, &:focus {
+                @include hover {
+                    color: lighten(#337AB7, 20.25%);
+                    text-decoration: none;
+                    transition: color 0.2s;
 
-                &::before {
-                    background-color: lighten(#337AB7, 20.25%);
+                    &::before {
+                        background-color: lighten(#337AB7, 20.25%);
+                    }
                 }
             }
 
@@ -254,26 +269,36 @@
         
         &-form {
             margin-bottom: 5px;
+            display: flex;
+            flex-direction: column;
+            grid-gap: 0;
         }
 
         &-input {
             background-color: var(--color-gray-100);
             border: 1px solid var(--corporate-v-1);
-            padding: 0 12px 0 34px;
-            background-image: url(../img/input__mail.svg);
-            background-size: 22px 17px;
-            background-repeat: no-repeat;
-            background-position: 6px 50%;
+            padding: 0 15px;
             height: 40px;
             border-radius: 4px;
             font-size: 12px;
-            font-weight: 900;
             color: var(--corporate-v-1);
-            min-width: 230px;
+            width: 220px;
 
             &::placeholder {
-                font-weight: 900;
                 color: var(--corporate-v-1);
+            }
+
+            &.wpcf7-not-valid {
+                border-color: var(--color-status-danger);
+                background-image: url(../img/icon__error.svg);
+                background-size: 25px 25px;
+                background-repeat: no-repeat;
+                background-position: 97% 50%;
+          
+                @include placeholder {
+                  color: var(--color-status-danger);
+                  opacity: 1;
+                }
             }
         }
 
@@ -287,6 +312,7 @@
             cursor: pointer;
             border: none;
             height: 40px;
+            max-width: max-content;
         }
 
         &-licenze {
@@ -301,12 +327,38 @@
         &-link {
             color: lighten(#337AB7, 20.25%);
             text-decoration: underline;
-            transition: all 0.2s;
+            transition: color 0.2s;
 
-            &:hover, &:focus, &:active {
+            &:hover, &:focus {
+                @include hover {
+                    color: var(--color-gray-100);
+                    text-decoration: none;
+                    transition: color 0.2s;
+                }
+            }
+        }
+
+        .main__form-field {
+            flex-direction: row;
+        }
+
+        .wpcf7-not-valid-tip {
+            font-size: 12px;
+            margin: 5px 0 0 0px;
+            font-weight: 600;
+            color: var(--color-status-danger);
+            width: max-content;
+        }
+
+        .main__form-licenze {
+            color: var(--color-gray-100);
+            margin: 10px 0;
+
+            .main__form-link {
                 color: var(--color-gray-100);
-                text-decoration: none;
-                transition: all 0.2s;
+                text-decoration: underline;
+                display: table;
+                margin-left: 3px;
             }
         }
     }
@@ -318,7 +370,7 @@
         font-size: 13px;
         font-weight: 600;
         color: var(--color-gray-100);
-        transition: all 0.2s;
+        transition: color 0.2s;
 
         .container {
             @include flex-all-sb;
@@ -335,10 +387,26 @@
                 margin-top: 5px;
             }
 
-            &:hover, &:focus, &:active {
-                color: lighten(#337AB7, 20.25%);
-                text-decoration: none;
-                transition: all 0.2s;
+            &:hover, &:focus {
+                @include hover {
+                    color: lighten(#337AB7, 20.25%);
+                    text-decoration: none;
+                    transition: color 0.2s;
+                }
+            }
+        }
+
+        &-corp {
+            @include before('md') {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            } 
+
+            span {
+                @include after('md') {
+                    margin-right: 15px;
+                 } 
             }
         }
     }

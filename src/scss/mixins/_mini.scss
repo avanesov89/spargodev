@@ -36,3 +36,16 @@
   &::-moz-placeholder          { @content; }
   &:-ms-input-placeholder      { @content; }  
 }
+
+@mixin hover {
+  @media (any-hover: hover) {
+    @content;
+  }
+}
+
+@mixin coarse {
+  @media (pointer: coarse) {
+    @content;
+  }
+}
+

@@ -73,9 +73,12 @@
 
         &-description {
             color: var(--corporate-v-1);
-            margin-top: auto;
             font-size: 14px;
             line-height: 20px;
+
+            p {
+                margin-bottom: 0;
+            }
         }
     }
 }

@@ -34,9 +34,7 @@
   }
 
   &__img {
-    /*border: 20px solid rgba(248, 249, 250, 0.5);
-    box-shadow: 0px 1px 6px rgba(52, 73, 94, 0.15);*/
-    border: 20px solid var(--color-gray-300);
+    border: 15px solid var(--color-gray-200);
     border-radius: 10px;
     max-width: 100%;
     max-height: 430px;
@@ -83,7 +81,7 @@
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: all 0.2s;
+    transition: opacity 0.2s;
 
     svg {
       fill: var(--color-gray-100);
@@ -95,7 +93,7 @@
     &:hover,
     &:focus {
       opacity: 1;
-      transition: all 0.2s;
+      transition: opacity 0.2s;
     }
   }
 }

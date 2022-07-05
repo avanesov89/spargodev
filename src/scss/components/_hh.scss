@@ -230,7 +230,6 @@
 
 
 details {
-
   summary {
     @include before('md') {
       justify-content: space-between;
@@ -240,6 +239,228 @@ details {
   &[open] {
     .vacancies__block-department {
       font-weight: 800;
+    }
+  }
+}
+
+
+.job {
+  &__main {
+    &-title {
+      font-size: 26px;
+      line-height: 34px;
+      color: var(--corporate-v-2);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      padding-right: 10px;
+
+      &--link {
+        font-weight: 600;
+        color: var(--corporate-v-2);
+        text-decoration: underline;
+      }
+    }
+
+    &-info {
+      max-width: 570px;
+      width: 100%;
+    }
+
+    .row {
+      @include after('md') {
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+    }
+
+    .main__button {
+      margin-top: 40px;
+      display: table;
+    }
+
+    &-img {
+      overflow: hidden;
+      display: flex;
+      border: 15px solid var(--color-gray-200);
+      background-color: var(--color-gray-200);
+      border-radius: 4px;
+      max-height: 450px;
+      max-width: 750px;
+      height: 100%;
+      width: 100%;
+
+      @include before('md') {
+        border-width: 10px;
+        margin-top: 30px;
+      }
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__counter {
+    position: relative;
+    padding: 60px 0;
+    margin-top: 70px;
+
+    @include before('md') {
+      padding: 30px 0 40px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: var(--color-gray-100);
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      width: 100vw;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .row {  
+      @include after('md') {
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include before('md') {
+        width: 100%;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &-title {
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 60px;
+      color: var(--corporate-v-1);
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      @include before('md') {
+        font-size: 36px;
+        line-height: 46px;
+        margin-bottom: 0;
+      }
+
+      span {
+        margin-right: 5px;
+        font-size: 30px;
+        line-height: 58px;
+        font-weight: 600;
+      }
+    }
+
+    &-text {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 600;
+      max-width: 280px;
+      text-align: center;
+
+      span {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__advantage {
+
+    padding: 70px 0;
+    margin-bottom: 35px;
+    border-bottom: 1px solid var(--color-gray-200);
+
+    @include before('md') {
+      padding: 35px 0;
+    }
+
+    &-title {
+      font-size: 22px;
+      line-height: 28px;
+      color: var(--corporate-v-1);
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    &-list {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      width: 100%;
+
+      @include before('lg') {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        width: 100vw;
+        position: relative;
+        margin-left: -16px;
+        margin-right: -16px;
+        left: 0;
+        padding: 10px 0px 10px 16px;
+        scroll-snap-type: x proximity;
+        scroll-padding: 0 20px;
+        scrollbar-width: none;
+        margin-top: 0;
+
+        &::-webkit-scrollbar {
+          width: 0;
+          height: 0;
+        }
+
+        &:after {
+            content: "";
+            height: 20px;
+            width: 20px;
+            flex-shrink: 0;
+        }
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--corporate-v-1);
+      line-height: 18px;
+      text-align: center;
+      width: 220px;
+      flex-shrink: 0;
+
+      @include before('lg') {
+        width: 200px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    &-img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 20px;
     }
   }
 }

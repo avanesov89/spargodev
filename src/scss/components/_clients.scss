@@ -1,16 +1,17 @@
 .clients {
   &__block {
     background-color: var(--color-gray-100);
-    padding: 80px 0;
+    /*padding: 80px 0;*/
+    padding: 0;
     margin-bottom: -130px;
 
     @include before('xxl') {
       margin-bottom: -80px;
     }
 
-    @include before('md') {
+    /*@include before('md') {
       padding: 40px 0;
-    }
+    }*/
 
     &-title {
       font-size: 30px;

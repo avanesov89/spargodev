@@ -10,7 +10,8 @@
     }
 
     @include before('md') {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -80,11 +81,14 @@
         display: block;
         overflow: hidden;
         text-overflow: ellipsis;
+        transition: color 0.2s;
 
-        &:hover,
-        &:focus {
-          color: var(--corporate-v-2);
-          text-decoration: underline;
+        &:hover, &:focus {
+          @include hover {
+            color: var(--corporate-v-2);
+            text-decoration: underline;
+            transition: color 0.2s;
+          }
         }
       }
     }
@@ -124,21 +128,26 @@
       display: flex;
       align-items: center;
       line-height: 18px;
+      transition: color 0.2s;
 
       svg {
         fill: var(--corporate-v-0);
         width: 18px;
         height: 18px;
         margin-left: 5px;
+        transition: fill 0.2s;
       }
 
-      &:hover,
-      &:focus {
-        color: var(--corporate-v-2);
-        text-decoration: underline;
+      &:hover, &:focus {
+        @include hover {
+          color: var(--corporate-v-2);
+          text-decoration: underline;
+          transition: color 0.2s;
 
-        svg {
-          fill: var(--corporate-v-2);
+          svg {
+            fill: var(--corporate-v-2);
+            transition: fill 0.2s;
+          }
         }
       }
     }
@@ -237,6 +246,14 @@
       margin-bottom: 25px;
     }
 
+    img {
+      object-fit: cover;
+      width: auto;
+      height: auto;
+      max-height: 100%;
+      max-width: 100%;
+    }
+
     &-item {
       position: relative;
 
@@ -245,12 +262,8 @@
         margin-right: 10px;
       }
 
-      @include before('md') {
-        margin-bottom: 5px;
-      }
-
       span {
-        font-family: OpenSans;
+        font-family: 'OpenSans';
         font-weight: 600;
         font-size: 12px;
       }
@@ -271,7 +284,7 @@
     }
 
     &-date, .post-views-count {
-      font-family: OpenSans;
+      font-family: 'OpenSans';
       font-weight: 600;
       font-size: 12px;
     }
@@ -384,14 +397,14 @@
         height: 100%;
         background-color: rgba(22, 29, 49, 0.6);
         border-radius: 4px;
-        transition: all 0.2s;
+        transition: background-color 0.2s;
       }
 
       &:hover,
       &:focus {
         &::after {
           background-color: rgba(22, 29, 49, 0.2);
-          transition: all 0.2s;
+          transition: background-color 0.2s;
         }
       }
     }
@@ -427,6 +440,4 @@
       z-index: 1;
     }
   }
-
-
 }

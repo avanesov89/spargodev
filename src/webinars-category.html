@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#34495E">
+  <title>Вебинары - Спраго Технологии - Автоматизация аптечного бизнеса</title>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="site-container">
+
+    @include('partials/header.html')
+
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="breadcrumbs__title">
+          Вебинары 
+        </div>
+        <ul class="breadcrumbs__list list-reset">
+          <li class="breadcrumbs__item"><a href="/" class="breadcrumbs__link" title="Главная">Главная</a></li>
+          <li class="breadcrumbs__item"><a href="/services-category.html" class="breadcrumbs__link"
+              title="Услуги">Пресс-центр</a></li>
+          <li class="breadcrumbs__item"><span class="breadcrumbs__active">Новости компании</span></li>
+        </ul>
+      </div>
+    </div>
+
+    @include('partials/webinars-category.html')
+
+    @include('partials/footer.html')
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

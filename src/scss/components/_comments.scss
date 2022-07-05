@@ -10,6 +10,7 @@
             line-height: 32px;
             font-weight: 600;
             color: var(--color-gray-900);
+            margin-bottom: 25px;
 
             @include before('md') {
                 font-size: 18px;
@@ -158,6 +159,160 @@
         svg {
             width: 17px;
             height: 17px;
+        }
+    }
+}
+
+.comment-form {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2,450px);
+    position: relative;
+
+    @include before('md') {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        color: var(--corporate-v-1);
+        margin-bottom: 10px;
+    }
+
+    input {
+        background-color: #fff;
+        border: 1px solid var(--color-gray-200);
+        border-radius: 4px;
+        padding: 0 15px;
+        height: 48px;
+        line-height: 48px;
+        color: var(--color-gray-600);
+        box-shadow: 0 2px 6px rgba(52,73,94,.15);
+        font-size: 14px;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        max-width: 500px;
+        text-overflow: ellipsis;
+    }
+
+    textarea {
+        background-color: #fff;
+        border: 1px solid var(--color-gray-200);
+        border-radius: 4px;
+        padding: 15px;
+        height: auto;
+        font-size: 14px;
+        line-height: 20px;
+        min-height: 190px;
+        max-height: 190px;
+        min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+        color: var(--color-gray-600);
+        box-shadow: 0px 2px 6px rgba(52, 73, 94, 0.15);
+
+        @include placeholder {
+            color: var(--color-gray-600);
+        }
+
+        &:hover {
+            &::placeholder {
+                opacity: 1;
+            }
+        }
+
+        &:focus {
+            border: 1px solid var(--color-gray-300);
+
+            &::placeholder {
+                opacity: 0.3;
+            }
+        }
+    }
+
+    .submit {
+        background-color: var(--corporate-v-2);
+        border-radius: 4px;
+        border: 2px solid var(--corporate-v-2);
+        padding: 10px 25px;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--color-gray-100);
+        transition: color 0.2s, background-color 0.2s;
+        white-space: nowrap;
+        width: auto;
+        height: auto;
+        line-height: 1;
+        cursor: pointer;
+
+        &.active {
+            background-color: var(--color-gray-100);
+            color: var(--corporate-v-2);
+            transition: color 0.2s, background-color 0.2s;
+        }
+
+        &:hover, &:focus {
+            @include hover {
+            background-color: var(--color-gray-100);
+            color: var(--corporate-v-2);
+            transition: color 0.2s, background-color 0.2s;
+            }
+        }
+
+        &:focus {
+            @include coarse {
+            background-color: var(--color-gray-100);
+            color: var(--corporate-v-2);
+            transition: color 0.2s, background-color 0.2s;
+            }
+        }
+    }
+
+    &-comment, &-author, &-email {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    &-comment {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        order: 3;
+    }
+
+    .form-submit {
+        order: 4;
+    }
+
+    &-url, &-notes {
+        display: none;
+    }
+    
+    .comment-notes {
+        display: none;
+    }
+
+    .comment-form-cookies-consent {
+        order: 5;
+        display: none;
+
+        input {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            border: 1px solid var(--color-gray-600);
+            border-radius: 4px;
+            margin-right: 8px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
         }
     }
 }

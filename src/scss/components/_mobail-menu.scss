@@ -151,8 +151,10 @@
             color: var(--corporate-v-0);
             text-decoration: none;
 
-            &:hover, &:focus, &:active  {
-                color: var(--corporate-v-2);
+            &:focus {
+                @include coarse {
+                    color: var(--corporate-v-2);
+                }
             }
 
             &--active {
@@ -166,16 +168,16 @@
         height: 0;
         visibility: hidden;
         background: var(--color-gray-400);
-        -webkit-transition: all 0.2s 0s, visibility 0s 0.2s;
-        -moz-transition: all 0.2s 0s, visibility 0s 0.2s;
-        transition: all 0.2s 0s, visibility 0s 0.2s;
+        -webkit-transition: visibility 0.2s 0s, visibility 0s 0.2s;
+        -moz-transition: visibility 0.2s 0s, visibility 0s 0.2s;
+        transition: visibility 0.2s 0s, visibility 0s 0.2s;
         &.open {
             padding: 20px 0;
             height: auto;
             visibility: visible;
-            -webkit-transition: all 0.2s 0s, visibility 0s 0s;
-            -moz-transition: all 0.2s 0s, visibility 0s 0s;
-            transition: all 0.2s 0s, visibility 0s 0s;
+            -webkit-transition: visibility 0.2s 0s, visibility 0s 0s;
+            -moz-transition: visibility 0.2s 0s, visibility 0s 0s;
+            transition: visibility 0.2s 0s, visibility 0s 0s;
             .sub-menu__item {
                 opacity: 1;
                 -webkit-transition: opacity 0.2s 0.1s;
@@ -207,8 +209,10 @@
                 left: 25px;
             }
 
-            &:hover, &:focus {
-                color: var(--corporate-v-2);
+            &:focus {
+                @include coarse {
+                    color: var(--corporate-v-2);
+                }
             }
         }
     }

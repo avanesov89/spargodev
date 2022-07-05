@@ -25,21 +25,36 @@
       font-weight: 600;
       color: var(--corporate-v-0);
       @include flex-v-center;
-      transition: all 0.2s;
 
       svg {
         fill: var(--corporate-v-0);
         margin-right: 5px;
-        transition: all 0.2s;
+        transition: fill 0.2s;
+        width: 20px;
+        height: 20px;
       }
 
       &:hover, &:focus {
-        color: var(--corporate-v-2);
-        transition: all 0.2s;
+        @include hover {
+          color: var(--corporate-v-2);
+          transition: color 0.2s;
+  
+          svg {
+            fill: var(--corporate-v-2);
+            transition: fill 0.2s;
+          }
+        }
+      }
 
-        svg {
-          fill: var(--corporate-v-2);
-          transition: all 0.2s;
+      &:focus {
+        @include coarse {
+          color: var(--corporate-v-2);
+          transition: color 0.2s;
+  
+          svg {
+            fill: var(--corporate-v-2);
+            transition: fill 0.2s;
+          }
         }
       }
     }
@@ -58,24 +73,16 @@
       font-weight: 300;
       cursor: pointer;
       color: var(--corporate-v-0);
-      transition: all 0.2s;
+      transition: color 0.2s;
       position: relative;
       text-decoration: underline;
 
       &:hover, &:focus {
-        color: var(--corporate-v-2);
-        transition: all 0.2s;
+        @include hover {
+          color: var(--corporate-v-2);
+          transition: color 0.2s;
+        }
       }
-
-      /*&::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        height: 1px;
-        background-color: var(--corporate-v-0);
-        width: 100%;
-        display: block;
-      }*/
 
       @include before('md') {
         display: none;
@@ -93,7 +100,7 @@
     svg {
       fill: var(--corporate-v-1);
       margin-right: 5px;
-      transition: all 0.2s;
+      transition: fill 0.2s;
     }
   }
 
@@ -159,11 +166,13 @@
       color: var(--corporate-v-1);
       font-size: 18px;
       font-weight: 700;
-      transition: all 0.2s;
+      transition: color 0.2s;
 
       &:hover, &:focus {
-        color: var(--corporate-v-2);
-        transition: all 0.2s;
+        @include hover {
+          color: var(--corporate-v-2);
+          transition: color 0.2s;
+        }
       }
 
       &--active {
@@ -186,20 +195,20 @@
       width: 100%;
       height: 100%;
       fill: var(--corporate-v-1);
-      transition: all 0.2s;
+      transition: fill 0.2s;
     }
 
     &:hover, &:focus {
-      svg {
+      @include hover {
         fill: var(--corporate-v-2);
-        transition: all 0.2s;
+        transition: fill 0.2s;
       }
     }
   }
 
   &__search {
     fill: var(--corporate-v-1);
-    transition: all 0.2s;
+    transition: fill 0.2s;
 
     &-button {
       background: none;
@@ -208,8 +217,10 @@
     }
 
     &:hover, &:focus {
-      fill: var(--corporate-v-2);
-      transition: all 0.2s;
+      @include hover {
+        fill: var(--corporate-v-2);
+        transition: fill 0.2s;
+      }
     }
   }
 

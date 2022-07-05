@@ -49,12 +49,14 @@
     &__link {
         text-decoration: underline;
         color: var(--color-gray-100);
-        transition: all 0.2s;
+        transition: color 0.2s;
 
-        &:hover, &:focus, &:active {
-            color: lighten(#337AB7, 20.25%);
-            text-decoration: none;
-            transition: all 0.2s;
+        &:hover, &:focus {
+            @include hover {
+                color: lighten(#337AB7, 20.25%);
+                text-decoration: none;
+                transition: color 0.2s;
+            }
         }
     }
 

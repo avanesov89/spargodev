@@ -42,7 +42,6 @@
 
     .container {
       display: flex;
-      justify-content: space-between;
 
       @include before('lg') {
         flex-direction: column;
@@ -151,6 +150,7 @@
       height: 100%;
       display: block;
       padding: 25px 20px;
+      position: relative;
 
       @include before('md') {
         padding: 20px;
@@ -217,6 +217,19 @@
       color: var(--corporate-v-1);
       margin-top: 10px;
     }
+
+    &-new {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: var(--corporate-v-2);
+      color: var(--color-gray-100);
+      padding: 8px 15px;
+      border-radius: 4px;
+      text-transform: lowercase;
+      font-size: 12px;
+      font-weight: 700;
+    }
   }
 
   /*Presentation*/
@@ -227,6 +240,14 @@
 
     &-text {
       max-width: 550px;
+
+      ul:not(:last-child) {
+        margin-bottom: 40px;
+      }
+
+      ul:last-child {
+        margin-bottom: 0;
+      }
     }
 
     &-item {
@@ -241,6 +262,11 @@
           flex-direction: row-reverse
         }
       }
+
+      @include before('md') {
+        padding: 50px 0;
+      }
+
     }
 
     .container {
@@ -254,8 +280,8 @@
 
     &-img {
       display: flex;
-      border: 15px solid var(--color-gray-300);
-      background-color: var(--color-gray-300);
+      border: 15px solid var(--color-gray-200);
+      background-color: var(--color-gray-200);
       border-radius: 4px;
       max-height: 450px;
       max-width: 750px;
@@ -269,6 +295,7 @@
 
       @include before('md') {
         border-width: 10px;
+        margin-top: 30px;
       }
 
       &--link {
@@ -292,9 +319,15 @@
     &-title {
       font-size: 20px;
       line-height: 26px;
-      margin-bottom: 30px;
+      margin-bottom: 15px;
       color: var(--corporate-v-0);
       font-weight: 600;
+
+      &--small {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 10px;
+      } 
     }
 
     &-button {
@@ -526,18 +559,29 @@
 
   &__options {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 50px;
     margin-bottom: 30px;
-
-    @include before('xl') {
-      justify-content: center;
-    }
 
     @include before('lg') {
       margin-top: 25px;
       align-content: center;
       flex-direction: column;
+      align-items: center;
+    }
+
+    &-headline {
+      flex-basis: 100%;
+      text-align: center;
+      font-weight: 700;
+      font-size: 26px;
+      margin-bottom: 25px;
+      color: var(--corporate-v-1);
+
+      @include before('lg') {
+        font-size: 20px;
+      }
     }
 
     &-item {
@@ -550,8 +594,15 @@
       color: var(--corporate-v-1);
       max-width: 420px;
       width: 100%;
+      position: relative;
+      transition: all 0.2s;
 
-      @include before('xl') {
+      &:hover, &:focus {
+        background-color: #fff;
+        transition: all 0.2s;
+      }
+
+      @include after('lg') {
         margin: 20px;
       }
 
@@ -572,36 +623,65 @@
 
     &-title {
       color: var(--corporate-v-1);
-      text-align: center;
-      font-size: 28px;
-      line-height: 32px;
-      font-weight: 600;
-      margin-bottom: 25px;
-
-      @include before('lg') {
-        font-size: 22px;
-        line-height: 28px;
-      }
+      font-size: 22px;
+      line-height: 28px;
+      font-weight: 700;
+      margin-bottom: 5px;
     }
 
     &-price {
-      padding-top: 50px;
-      text-align: center;
-      margin-top: auto;
-      font-size: 20px;
-      margin-bottom: 5px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: var(--corporate-v-2);
 
-      @include before('lg') {
-        margin-bottom: 15px;
+      &--span {
+        font-weight: 800;
+        font-size: 26px;
+        line-height: 30px;
+        text-transform: lowercase;
       }
 
       svg {
-        width: 14px;
-        height: 14px;
+        width: 15px;
+        height: 15px;
+        fill: var(--corporate-v-2);
+      }
+    }
+
+    &-tooltip {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 300;
+      color: var(--color-gray-600);
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--color-gray-200);
+      text-transform: lowercase;
+      margin-bottom: 25px;
+    }
+
+    &-description {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 600;
+      color: var(--corporate-v-1);
+      margin-bottom: 15px;
+    }
+
+    &-list {
+      ul {
+        li {
+          font-size: 14px;
+
+          &:not(:last-child) {
+            margin-bottom: 0;
+          }
+        }
       }
     }
 
     .app__buttons {
+      margin-top: auto;
+      padding-top: 30px;
       width: 100%;
       display: flex;
       justify-content: center;

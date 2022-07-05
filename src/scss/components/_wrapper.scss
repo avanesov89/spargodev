@@ -36,6 +36,12 @@
       font-size: 22px;
       line-height: 28px;
     }
+
+    &.small__title {
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 15px;
+    }
   }
 
   h3 {
@@ -203,23 +209,25 @@
       border-bottom: 1px solid var(--color-gray-200);
       color: var(--color-gray-800);
       font-weight: 600;
-      transition: all 0.2s;
+      transition: color 0.2s;
       position: relative;
       z-index: 1;
 
       svg {
         fill: var(--color-gray-800);
+        width: 20px;
+        height: 20px;
       }
 
-      &:hover,
-      &:focus,
-      &:active {
-        color: var(--corporate-v-2);
-        transition: all 0.2s;
+      &:hover, &:focus {
+        @include hover {
+          color: var(--corporate-v-2);
+          transition: color 0.2s;
 
-        svg {
-          fill: var(--corporate-v-2);
-          transition: all 0.2s;
+          svg {
+            fill: var(--corporate-v-2);
+            transition: fill 0.2s;
+          }
         }
       }
     }
@@ -237,15 +245,114 @@
     }
 
     .main__button {
-      padding: 18px 50px;
-      font-size: 20px;
-      max-width: max-content;
-      margin: 0 auto;
+      padding: 15px;
+      width: 100%;
 
       @include before('xl') {
-        padding: 15px 50px;
-        font-size: 18px;
+        max-width: max-content;
+        margin: 0 auto;
       }
     }
   }
+}
+
+
+
+#mailpoet_form_1.mailpoet_form > form {
+  padding: 0 !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#mailpoet_form_1.mailpoet_form > .mailpoet_paragraph {
+  max-width: none;
+  margin: 0 !important;
+}
+
+.mailpoet_form .mailpoet_paragraph {
+  margin: 0 !important;
+  width: auto !important;
+}
+
+.mailpoet_checkbox_label {
+  font-size: 14px;
+  color: var(--color-gray-100);
+}
+
+.mailpoet_checkbox_label a {
+  color: var(--color-gray-100);
+  text-decoration: underline;
+}
+
+#mailpoet_form_1 .mailpoet_submit {
+  min-width: max-content;
+  margin-left: 10px !important;
+}
+
+#mailpoet_form_1 form.mailpoet_form .mailpoet_paragraph:nth-child(3n) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin: 10px 0 !important;
+}
+
+.mailpoet_text,
+.mailpoet_textarea,
+.mailpoet_select,
+.mailpoet_date_month,
+.mailpoet_date_day,
+.mailpoet_date_year,
+.mailpoet_date {
+    background-color: var(--color-gray-100);
+    border: 1px solid var(--corporate-v-1);
+    padding: 0 15px !important;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--corporate-v-1);
+    width: 220px;
+    margin-left: 10px;
+    min-width: 220px;
+    max-width: 220px !important;
+}
+
+#mailpoet_form_1 .mailpoet_text.parsley-error {
+  border-color: var(--color-status-danger);
+  color: var(--color-status-danger);
+  background-image: url(../img/icon__error.svg);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+}
+
+.mailpoet_message {
+  display: flex;
+}
+
+#mailpoet_form_1 .parsley-required, #mailpoet_form_1 .parsley-custom-error-message {
+  font-size: 12px;
+  margin: 5px 0 0;
+  font-weight: 600;
+  color: var(--color-status-danger) !important;
+  width: 100%;
+}
+
+.mailpoet_form.mailpoet_form_successfully_send .mailpoet_validate_success {
+  left: 0 !important;
+  transform: translate(0%, -50%) !important;
+  text-align: left !important;
+}
+
+.mailpoet_message .mailpoet_validate_success {
+  color: #fff;
+  font-size: 14px;
+  text-align: left;
+  left: 0;
+}
+
+#mailpoet_form_1 .parsley-errors-list {
+  font-size: 12px;
+  margin: 5px 0 0;
+  font-weight: 600;
+  color: var(--color-status-danger) !important;
+  width: 100%;
 }

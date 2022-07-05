@@ -112,13 +112,16 @@
       line-height: 18px;
       font-weight: 700;
       color: var(--corporate-v-0);
+      transition: color 0.2s;
 
       &--link {
 
-        &:hover,
-        &:focus {
-          text-decoration: underline;
-          color: var(--corporate-v-3);
+        &:hover, &:focus {
+          @include hover {
+            text-decoration: none;
+            color: var(--corporate-v-2);
+            transition: color 0.2s;
+          }
         }
       }
     }
