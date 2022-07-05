@@ -238,4 +238,105 @@
             }
         }
     }
+
+    &__info {
+        width: 100%;
+
+        @include after('xl') {            
+            max-width: calc(100% - 510px);
+        }
+
+        &-button {
+            margin-bottom: 30px;
+
+            @include after('xl') {
+                display: none;
+            }
+        }
+
+        &-list {
+            position: relative;
+            padding-bottom: 30px;
+        }
+
+        &-moderator {            
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--corporate-v-1);
+            line-height: 24px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            position: relative;
+
+            &::after {
+                content: '';
+                height: 1px;
+                width: 100%;
+                background-color: var(--color-gray-200);
+                display: block;
+                position: absolute;
+                bottom: 0;
+            }
+
+            span {
+                font-weight: bold;
+            }
+        }
+
+        &-item {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--corporate-v-1);
+            line-height: 24px;
+
+            @include before('xl') {            
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+
+            span {
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            time {
+                color: var(--corporate-v-2);
+                font-family: 'OpenSans';
+                font-weight: 600;    
+                font-size: 18px;     
+            }
+        }
+    }
+
+    &__form {
+        max-width: 450px;
+        background-color: rgba(248, 249, 250, 0.5);
+        border-radius: 4px;
+        box-shadow: 0px 1px 6px rgba(52, 73, 94, 0.15);
+        padding: 30px;
+        align-self: flex-start;
+
+        @include before('xl') {
+            display: none;
+        }
+
+        &-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 28px;
+            color: var(--corporate-v-0);
+            margin-bottom: 30px;
+
+            span {
+                color: var(--color-status-danger);
+                font-weight: bold;
+            }
+        }
+
+        .main__form {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }
