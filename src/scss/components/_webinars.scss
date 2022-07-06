@@ -328,6 +328,10 @@
             color: var(--corporate-v-0);
             margin-bottom: 30px;
 
+            &--closed {
+                color: var(--color-status-danger);
+            }
+
             span {
                 color: var(--color-status-danger);
                 font-weight: bold;
