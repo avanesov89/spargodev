@@ -3,7 +3,11 @@
     margin-bottom: 100px;
 
     @include before('lg') {
-        margin-bottom: 50px;
+        margin-bottom: 60px;
+    }
+
+    &-prev {
+        padding-bottom: 30px;
     }
 
     &-head {
@@ -57,6 +61,16 @@
 
         @include before('lg') {
             display: none;
+        }
+    }
+
+    &-button {
+        margin: 20px 0 0;
+        display: none;
+        justify-content: center;
+
+        @include before('lg') {
+            display: flex;
         }
     }
 
